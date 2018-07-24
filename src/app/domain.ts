@@ -18,6 +18,6 @@ export class Stagiaire {
     }
 
     toString() {
-        return this.nom + ' ' + this.prenom;
+        return this.prenom + ' ' + this.nom;
     }
 }

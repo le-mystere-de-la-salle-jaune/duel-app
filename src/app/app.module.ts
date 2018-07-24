@@ -8,6 +8,8 @@ import { ChoixStagiaireComponent } from './choix-stagiaire/choix-stagiaire.compo
 import { BandeauComponentComponent } from './bandeau-component/bandeau-component.component';
 import { StagiaireComponentComponent } from './stagiaire-component/stagiaire-component.component';
 import { ListeStagiairesComponentComponent } from './liste-stagiaires-component/liste-stagiaires-component.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StagiaireService } from './services/stagiaire.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { ListeStagiairesComponentComponent } from './liste-stagiaires-component/
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StagiaireService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

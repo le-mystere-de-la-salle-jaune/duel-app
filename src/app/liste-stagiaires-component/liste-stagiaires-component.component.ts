@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stagiaire } from '../domain';
+import { StagiaireService } from '../services/stagiaire.service';
+
 
 
 @Component({
@@ -9,15 +11,17 @@ import { Stagiaire } from '../domain';
 })
 export class ListeStagiairesComponentComponent implements OnInit {
 
-  private _listeStagiaire:Stagiaire[] = [];
+  listeStagiaire: Stagiaire[] = [];
 
-  constructor() {
-    this._listeStagiaire.push(new Stagiaire(1, 'Lupin', 'Paul', 'test@hotmail.fr', 'testPhoto'));
-    this._listeStagiaire.push(new Stagiaire(2, 'Rent', 'Jacques', 'test@hotmail.fr', 'testPhoto'));
-  }
 
-  get listeStagiaire() {
-    return this._listeStagiaire;
+  constructor(private _stagiaireService: StagiaireService) {
+    this._stagiaireService.listerStagiaires().then((stagiaires: Stagiaire[]) => {
+      stagiaires.forEach(stagiaire => {
+        this.listeStagiaire.push(stagiaire);
+      });
+    }, (error: any) => {
+      console.log("error", error);
+    });;
   }
 
   ngOnInit() {
