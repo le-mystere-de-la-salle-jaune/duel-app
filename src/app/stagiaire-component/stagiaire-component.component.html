@@ -1,2 +1,13 @@
-<p>{{stagiaire.toString()}}</p>
-<button (click)="stagiaire.choisirStagiaire()">Choisir</button>
+<div class="container-fluid">
+    <div class="no-gutters justify-content-around">
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 14rem;">
+                <img class="card-img-top" src="http://www.virusphoto.com/attachment.php?attachmentid=271907&stc=1&d=1438726987" alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">{{stagiaire.toString()}}</p>
+                    <button class="btn btn-primary" (click)="stagiaire.choisirStagiaire()">Choisir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

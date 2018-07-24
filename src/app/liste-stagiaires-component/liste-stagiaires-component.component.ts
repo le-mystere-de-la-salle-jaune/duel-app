@@ -12,8 +12,7 @@ import { StagiaireService } from '../services/stagiaire.service';
 export class ListeStagiairesComponentComponent implements OnInit {
 
   listeStagiaire: Stagiaire[] = [];
-
-
+  
   constructor(private _stagiaireService: StagiaireService) {
     this._stagiaireService.listerStagiaires().then((stagiaires: Stagiaire[]) => {
       stagiaires.forEach(stagiaire => {
