@@ -9,11 +9,15 @@ import { Stagiaire } from '../domain';
 })
 export class ListeStagiairesComponentComponent implements OnInit {
 
-  private listeStagiaire:Stagiaire[] = [];
+  private _listeStagiaire:Stagiaire[] = [];
 
   constructor() {
-    this.listeStagiaire.push(new Stagiaire(1, 'Lupin', 'Paul', 'test@hotmail.fr', 'testPhoto'));
-    this.listeStagiaire.push(new Stagiaire(2, 'Rent', 'Jacques', 'test@hotmail.fr', 'testPhoto'));
+    this._listeStagiaire.push(new Stagiaire(1, 'Lupin', 'Paul', 'test@hotmail.fr', 'testPhoto'));
+    this._listeStagiaire.push(new Stagiaire(2, 'Rent', 'Jacques', 'test@hotmail.fr', 'testPhoto'));
+  }
+
+  get listeStagiaire() {
+    return this._listeStagiaire;
   }
 
   ngOnInit() {
