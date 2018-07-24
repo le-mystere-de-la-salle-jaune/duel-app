@@ -14,6 +14,8 @@ export class ListeStagiairesComponentComponent implements OnInit {
   constructor() {
     this._listeStagiaire.push(new Stagiaire(1, 'Lupin', 'Paul', 'test@hotmail.fr', 'testPhoto'));
     this._listeStagiaire.push(new Stagiaire(2, 'Rent', 'Jacques', 'test@hotmail.fr', 'testPhoto'));
+    this._listeStagiaire.push(new Stagiaire(3, 'Pluton', 'Camille', 'test@hotmail.fr', 'testPhoto'));
+    this._listeStagiaire.push(new Stagiaire(4, 'Mars', 'Bruno', 'test@hotmail.fr', 'testPhoto'));
   }
 
   get listeStagiaire() {
