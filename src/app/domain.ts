@@ -1,9 +1,9 @@
 export class Stagiaire {
-    private id:number;
-    private nom:string;
-    private prenom:string;
-    private email:string;
-    private photoUrl:string;
+    id:number;
+    nom:string;
+    prenom:string;
+    email:string;
+    photoUrl:string;
 
     constructor(_id:number, _nom:string, _prenom:string, _email:string, _photoUrl:string) {
         this.id = _id;
