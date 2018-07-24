@@ -18,7 +18,7 @@ export class StagiaireService {
   listerStagiaires(): Promise<Stagiaire[]> {
     return this._http.get(URL_BACKEND)
       .toPromise()
-      .then((stagiairesServeur: any[]) => stagiairesServeur.map( el => new Stagiaire(el.id, el.nom, el.prenom, el.email, el.photoUrl)))
+      .then((stagiairesServeur: any[]) => stagiairesServeur.map( el => new Stagiaire(el.id, el.nom, el.prenom, el.email, el.photo_url)))
   }
 
 }
