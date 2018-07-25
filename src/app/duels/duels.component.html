@@ -1,0 +1,18 @@
+<h3>Mes Duels</h3>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Libellé</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let duel of listeDuels">
+        <td *ngIf='idStagiaire == duel.stagiaireA.id else stagiaireB'>{{duel.toString(2)}}</td>
+        <ng-template #stagiaireB>
+            <td>{{duel.toString(1)}}</td>
+         </ng-template>
+        <td><button class="btn btn-primary" (click)="participer()" disabled>Participer</button></td>
+      </tr>
+    </tbody>
+  </table>

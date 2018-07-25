@@ -5,7 +5,7 @@ import {environment} from '../../environments/environment';
 
 // en développement, URL_BACKEND = 'http://localhost:8080/api/stagiaires'
 // en mode production, URL_BACKEND = 'https://evalme-app.herokuapp.com/api/stagiaires/'
-const URL_BACKEND = environment.backendUrl;
+const URL_BACKEND = environment.backendUrl + environment.stagiairesApi;
 
 @Injectable()
 export class StagiaireService {
