@@ -1,8 +1,9 @@
-<h3>Mes Duels</h3>
-<table class="table">
+<div class="ml-4 mb-3 mt-2 mr-4">
+  <h3>Mes Duels</h3>
+  <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Libellé</th>
+        <th scope="col">Libellés</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -10,9 +11,12 @@
       <tr *ngFor="let duel of listeDuels">
         <td *ngIf='idStagiaire == duel.stagiaireA.id else stagiaireB'>{{duel.toString(2)}}</td>
         <ng-template #stagiaireB>
-            <td>{{duel.toString(1)}}</td>
-         </ng-template>
-        <td><button class="btn btn-primary" (click)="participer()" disabled>Participer</button></td>
+          <td>{{duel.toString(1)}}</td>
+        </ng-template>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="participer()" disabled>Participer</button>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
