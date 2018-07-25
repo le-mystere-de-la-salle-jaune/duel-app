@@ -1,17 +1,26 @@
 <header>
-    
+  <div class="row justify-content-end mr-2">
+    <div class="d-flex align-items-center">
+      <p>stagiaire@stagiaire.fr</p>
+
+      <button type="button" class="btn btn-dark">Changer de stagiaire</button>
+    </div>
+  </div>
+
+
+
 </header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a routerLink="/{{idStagiaire}}/duels" class="nav-item nav-link">Mes duels</a>
-        <a routerLink="/{{idStagiaire}}/resultats" class="nav-item nav-link">Mes résultats</a>
-      </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a routerLink="/{{idStagiaire}}/duels" class="nav-item nav-link">Mes duels</a>
+      <a routerLink="/{{idStagiaire}}/resultats" class="nav-item nav-link">Mes résultats</a>
     </div>
-  </nav>
+  </div>
+</nav>
 <app-bandeau-component></app-bandeau-component>
 <router-outlet></router-outlet>
- 
