@@ -17,7 +17,8 @@ import { DuelsComponent } from './duels/duels.component';
 import { ResultatsComponent } from './resultats/resultats.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DetailsResultatsComponent } from './details-resultats/details-resultats.component';
-
+import { FormsModule } from '@angular/forms';
+import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.component'
 
 const appRoutes: Routes = [
 
@@ -28,6 +29,8 @@ const appRoutes: Routes = [
   { path: ':id_stagiaire/resultats', component: ResultatsComponent },
   
   { path: ':id_stagiaire/resultats/:id', component: DetailsResultatsComponent },
+
+  { path: ':id_stagiaire/profil', component: FormStagiaireComponent },
 
   { path: '',   redirectTo: '/choix-stagiaires', pathMatch: 'full' }, // redirige vers la route page1 par défaut
 
@@ -45,13 +48,15 @@ const appRoutes: Routes = [
     DuelsComponent,
     ResultatsComponent,
     DetailsResultatsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FormStagiaireComponent
 
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    FormsModule,
     HttpClientModule
   ],
   providers: [StagiaireService, DuelService],
