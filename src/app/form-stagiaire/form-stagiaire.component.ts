@@ -10,16 +10,20 @@ import { StagiaireService } from './../services/stagiaire.service';
 })
 export class FormStagiaireComponent implements OnInit {
 
+  stagiaire:Stagiaire;
 
- 
-  constructor(private router:Router, private stagiaireService:StagiaireService) { }
-stagiaire:Stagiaire = new Stagiaire(1, 'clopin', 'brigitte',  'test@test.fr', 'photo');
+  constructor(private _router:Router, private _stagiaireService:StagiaireService) {
+  }
+  
   ngOnInit() {
+    this._stagiaireService.findStagiaireById(this._stagiaireService.currentStagiaireId).then((stagiaireFound:Stagiaire) => this.stagiaire = stagiaireFound);
   }
 
   submit() {
+    //faire un update à partir du stagiaire service 
+    //TO DO
     console.log(this.stagiaire);
-    this.router.navigate([this.stagiaireService.currentStagiaireId+'/duels'])
+    this._router.navigate([this._stagiaireService.currentStagiaireId+'/duels'])
   }
 
 }

@@ -26,7 +26,7 @@ export class StagiaireService {
   findStagiaireById(id:number):Promise<Stagiaire> {
     return this._http.get(URL_BACKEND+id)
       .toPromise()
-      .then((stagiaire: Stagiaire) => stagiaire);
+      .then((stagiaireServeur: any) => new Stagiaire(stagiaireServeur.id, stagiaireServeur.nom, stagiaireServeur.prenom, stagiaireServeur.email, stagiaireServeur.photo_url));
   }
 
 }
