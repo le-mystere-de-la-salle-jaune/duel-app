@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Duel } from '../domain';
 import { DuelService } from '../services/duel.service';
+import { StagiaireService } from '../services/stagiaire.service';
 
 
 @Component({
@@ -15,25 +16,17 @@ export class DuelsComponent implements OnInit {
   listeDuels:Duel[] = [];
 
   // Injection du service ActivatedRoute
-  constructor(private route: ActivatedRoute, private _duelService:DuelService) {
-    // récupération du paramètre id
-    this.idStagiaire = Number.parseInt(route.snapshot.paramMap.get("id_stagiaire"));
-    _duelService.listerDuels().then((duels: Duel[]) => {
-      duels.forEach(duel => {
-        if (duel.stagiaireA.id == this.idStagiaire || duel.stagiaireB.id == this.idStagiaire) {
-          this.listeDuels.push(duel);
-        }
-      });
-    });
-
+  constructor(private router:Router, private route: ActivatedRoute, private _duelService:DuelService, private _stagiaireService:StagiaireService) {
+    
   }
 
-  
   participer() {
     //TO DO
   }
 
   ngOnInit() {
+    this.idStagiaire = this._stagiaireService.currentStagiaireId;
+    this. listeDuels =  this._duelService.getDuelsByStagiaireId(this.idStagiaire);
   }
 
 }

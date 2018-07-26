@@ -1,0 +1,20 @@
+<header>
+    <div class="row justify-content-end mr-2 d-flex align-items-center">
+        <span *ngIf='currentStagiaire'>{{currentStagiaire.email}}</span>
+        <a  class="btn btn-dark btn-md" routerLink="/">Changer de stagiaire</a>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a routerLink="/{{idStagiaire}}/duels" class="nav-item nav-link">Mes duels</a>
+        <a routerLink="/{{idStagiaire}}/resultats" class="nav-item nav-link">Mes résultats</a>
+      </div>
+    </div>
+  </nav>
+  <app-bandeau-component></app-bandeau-component>
+  <router-outlet></router-outlet>
