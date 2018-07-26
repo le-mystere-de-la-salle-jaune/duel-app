@@ -20,19 +20,8 @@ export class AppComponent  implements OnInit {
   redirectToHome() {
     this._router.navigate(['']);
   }
-
-  /*getCurrentStagiaire():void{ 
-    /*if (location.pathname != '') {
-      // récupération du paramètre id
-      let idStagiaire = Number.parseInt(location.pathname.split("/")[1]);
-      console.log(idStagiaire);      
-      this.stagiaireService.findStagiaireById(idStagiaire)
-        .then((stagiaire: Stagiaire) => this.currentStagiaire = stagiaire, (error: any) => console.log('error', error));
-    }
-}*/
-
+  
   ngOnInit() {
-    //this.getCurrentStagiaire();
   }
 }
 
