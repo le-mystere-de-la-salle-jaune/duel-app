@@ -17,7 +17,11 @@ import { DuelsComponent } from './duels/duels.component';
 import { ResultatsComponent } from './resultats/resultats.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DetailsResultatsComponent } from './details-resultats/details-resultats.component';
+
+import { FormsModule } from '@angular/forms';
+import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.component'
 import { NavigationComponent } from './navigation/navigation.component';
+
 
 const appRoutes: Routes = [
   
@@ -33,12 +37,10 @@ const appRoutes: Routes = [
       
       { path: 'resultats/:id', component: DetailsResultatsComponent },
 
+      { path: 'profil', component: FormStagiaireComponent }
+
     ]
   },
-
-  //routeur hiérarchique
-
-  
 
   //{ path: '',   redirectTo: '/choix-stagiaires', pathMatch: 'full' }, // redirige vers la route page1 par défaut
 
@@ -57,13 +59,16 @@ const appRoutes: Routes = [
     ResultatsComponent,
     DetailsResultatsComponent,
     PageNotFoundComponent,
+    FormStagiaireComponent,
     NavigationComponent 
+
 
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    FormsModule,
     HttpClientModule
   ],
   providers: [StagiaireService, DuelService],
