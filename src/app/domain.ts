@@ -13,6 +13,14 @@ export class Stagiaire {
         this.photoUrl = _photoUrl;
     }
 
+    toStagiaireServeur():any {
+        const stagiaireServeur = Object.assign(this, {"photo_url" : this.photoUrl});
+        delete stagiaireServeur.photoUrl
+        return stagiaireServeur
+    }
+
+
+
     toString() {
         return this.prenom + ' ' + this.nom;
     }

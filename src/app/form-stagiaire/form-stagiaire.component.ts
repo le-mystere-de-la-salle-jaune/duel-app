@@ -20,8 +20,7 @@ export class FormStagiaireComponent implements OnInit {
   }
 
   submit() {
-    //faire un update à partir du stagiaire service 
-    //TO DO
+    this._stagiaireService.modifierStagiaire(this.stagiaire);
     console.log(this.stagiaire);
     this._router.navigate([this._stagiaireService.currentStagiaireId+'/duels'])
   }

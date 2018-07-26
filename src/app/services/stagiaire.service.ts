@@ -29,4 +29,15 @@ export class StagiaireService {
       .then((stagiaireServeur: any) => new Stagiaire(stagiaireServeur.id, stagiaireServeur.nom, stagiaireServeur.prenom, stagiaireServeur.email, stagiaireServeur.photo_url));
   }
 
+  modifierStagiaire(stagiaire:Stagiaire):Promise<Stagiaire> {
+
+    return this._http.put(URL_BACKEND+stagiaire.id, stagiaire.toStagiaireServeur())
+    .toPromise()
+    .then((el: any) => new Stagiaire(el.id,el.nom, el.prenom,el.email, el.photo_url))
+    .catch(function(error) {
+      console.log(error);
+      return null;
+    });
+  }
+
 }

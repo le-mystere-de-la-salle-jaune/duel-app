@@ -42,7 +42,7 @@
     <div class="form-group row">
       <label for="photo" class="col-sm-2 col-form-label">Photo Url</label>
       <div class="col-sm-10">
-        <input id="photo" name="photo" [(ngModel)]="stagiaire.photoUrl" #champPhotoUrl="ngModel" required>
+        <input id="photo" name="photo"  [(ngModel)]="stagiaire.photoUrl" #champPhotoUrl="ngModel" required>
         <div *ngIf="champPhotoUrl.errors && champPhotoUrl.errors.required">
           <h5>Ce champ doit être complété</h5>
         </div>

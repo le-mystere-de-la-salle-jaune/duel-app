@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StagiaireService } from './services/stagiaire.service';
 import { Stagiaire } from './domain';
-import { Location } from '../../node_modules/@angular/common';
-import { BandeauComponentComponent } from './bandeau-component/bandeau-component.component';
 
 @Component({
   selector: 'app-root',
