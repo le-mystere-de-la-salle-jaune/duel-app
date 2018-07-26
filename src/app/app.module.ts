@@ -17,22 +17,32 @@ import { DuelsComponent } from './duels/duels.component';
 import { ResultatsComponent } from './resultats/resultats.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DetailsResultatsComponent } from './details-resultats/details-resultats.component';
+
 import { FormsModule } from '@angular/forms';
 import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.component'
+import { NavigationComponent } from './navigation/navigation.component';
+
 
 const appRoutes: Routes = [
-
-  { path: 'choix-stagiaires', component: ChoixStagiaireComponent }, // /page1 affiche le composant A
-
-  { path: ':id_stagiaire/duels', component: DuelsComponent }, // /page2 affiche le composant B
-
-  { path: ':id_stagiaire/resultats', component: ResultatsComponent },
   
-  { path: ':id_stagiaire/resultats/:id', component: DetailsResultatsComponent },
+  { path: '', component: ChoixStagiaireComponent }, // /page1 affiche le composant A
 
-  { path: ':id_stagiaire/profil', component: FormStagiaireComponent },
+  {
+    path: ':id_stagiaire',
+    component : NavigationComponent, // qui contient <router-outlet></router-outlet> et le menu
+    children: [
+      { path: 'duels', component: DuelsComponent }, // /page2 affiche le composant B
 
-  { path: '',   redirectTo: '/choix-stagiaires', pathMatch: 'full' }, // redirige vers la route page1 par défaut
+      { path: 'resultats', component: ResultatsComponent },
+      
+      { path: 'resultats/:id', component: DetailsResultatsComponent },
+
+      { path: 'profil', component: FormStagiaireComponent }
+
+    ]
+  },
+
+  //{ path: '',   redirectTo: '/choix-stagiaires', pathMatch: 'full' }, // redirige vers la route page1 par défaut
 
   { path: '**',  component: PageNotFoundComponent } // page non trouvée
 ];
@@ -49,7 +59,9 @@ const appRoutes: Routes = [
     ResultatsComponent,
     DetailsResultatsComponent,
     PageNotFoundComponent,
-    FormStagiaireComponent
+    FormStagiaireComponent,
+    NavigationComponent 
+
 
   ],
   imports: [

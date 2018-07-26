@@ -17,4 +17,17 @@ export class DuelService {
       .toPromise()
       .then((duelsServeur: any[]) => duelsServeur.map( el => new Duel(el.id, el.stagiaireA, el.stagiaireB, el.quizz)));
   }
+
+  getDuelsByStagiaireId(idStagiaire:number):Duel[] {
+    let listeDuels:Duel[] = [];
+    this.listerDuels().then((duels: Duel[]) => {
+      duels.forEach(duel => {
+        if (duel.stagiaireA.id == idStagiaire || duel.stagiaireB.id == idStagiaire) {
+          listeDuels.push(duel);
+        }
+      });
+    });
+    return listeDuels;
+  }
+
 }
