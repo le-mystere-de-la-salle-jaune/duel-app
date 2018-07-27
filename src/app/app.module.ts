@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.component'
 import { NavigationComponent } from './navigation/navigation.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ResultatsService } from './services/resultats.service';
 
 
 const appRoutes: Routes = [
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
     children: [
       { path: 'duels', component: DuelsComponent }, // /page2 affiche le composant B
 
-      { path: 'resultats', component: ResultatsComponent },
+      { path: 'resultats-duels', component: ResultatsComponent },
       
       { path: 'resultats/:id', component: DetailsResultatsComponent },
 
@@ -71,7 +72,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [StagiaireService, DuelService],
+  providers: [StagiaireService, DuelService, ResultatsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
