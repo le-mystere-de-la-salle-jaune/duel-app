@@ -16,6 +16,7 @@ export class DuelsComponent implements OnInit {
 
   idStagiaire: number;
   listeDuels:Duel[] = [];
+  saisi:string;
 
   // Injection du service ActivatedRoute
   constructor(private router:Router, private route: ActivatedRoute, private _duelService:DuelService, private _stagiaireService:StagiaireService) {
