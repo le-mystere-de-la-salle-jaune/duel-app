@@ -1,4 +1,5 @@
 <div class="ml-4 mb-3 mt-2 mr-4">
+  <input type="text"  placeholder="Rechercher un duel" [(ngModel)]="saisi">
   <h3>Mes Duels</h3>
   <table class="table">
     <thead class="thead-dark">
@@ -8,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let duel of listeDuels">
+      <tr *ngFor="let duel of listeDuels | filterPipe:saisi">
         <td *ngIf='idStagiaire == duel.stagiaireA.id else stagiaireB'>{{duel.toString(2)}}</td>
         <ng-template #stagiaireB>
           <td>{{duel.toString(1)}}</td>

@@ -1,14 +1,13 @@
 import {PipeTransform, Pipe} from '@angular/core';
+import { Quizz } from './../domain';
 
 @Pipe({name: 'filterPipe'})
 export class FilterPipe implements PipeTransform {
     transform(value, args) {
-        let returnTab:any[];
-        value.forEach(element => {
-            if(element.titre.contains(args)) {
-                returnTab.push(element);
-            }
-        });
-        return returnTab;
+        if(args != undefined) {
+            return value.filter(duel => duel.quizz.titre.includes(args));
+        } else {
+            return value;
+        }
     }
 }
