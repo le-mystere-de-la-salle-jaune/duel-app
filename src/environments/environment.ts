@@ -9,7 +9,8 @@ export const environment = {
   backendUrl: 'http://localhost:8080/api/',
   
   stagiairesApi: 'stagiaires/',
-  duelsApi: 'duels/'
+  duelsApi: 'duels/',
+  resultatsApi: 'resultats-duels/'
 
 
   
