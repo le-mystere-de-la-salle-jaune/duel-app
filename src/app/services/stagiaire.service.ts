@@ -11,8 +11,8 @@ const URL_BACKEND = environment.backendUrl + environment.stagiairesApi;
 @Injectable()
 export class StagiaireService {
 
+  //Valorisé dans "navigation.component.ts"
   currentStagiaireId:number;
-  //private _listeStagiaire: Stagiaire[] = [];
 
   // injection du service HTTP
   constructor(private _http: HttpClient) { }
@@ -30,7 +30,6 @@ export class StagiaireService {
   }
 
   modifierStagiaire(stagiaire:Stagiaire):Promise<Stagiaire> {
-
     return this._http.put(URL_BACKEND+stagiaire.id, stagiaire.toStagiaireServeur())
     .toPromise()
     .then((el: any) => new Stagiaire(el.id,el.nom, el.prenom,el.email, el.photo_url))

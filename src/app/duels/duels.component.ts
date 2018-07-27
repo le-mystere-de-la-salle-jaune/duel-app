@@ -19,17 +19,18 @@ export class DuelsComponent implements OnInit {
   saisi:string;
 
   // Injection du service ActivatedRoute
-  constructor(private router:Router, private route: ActivatedRoute, private _duelService:DuelService, private _stagiaireService:StagiaireService) {
+  constructor(private _router:Router, private _duelService:DuelService, private _stagiaireService:StagiaireService) {
     
   }
 
-  participer() {
-    //TO DO
+  participer(idDuel:number) {
+    this._router.navigate([location.pathname+'/'+idDuel])
+    this._duelService.currentDuelId = idDuel;
   }
 
   ngOnInit() {
     this.idStagiaire = this._stagiaireService.currentStagiaireId;
-    this. listeDuels =  this._duelService.getDuelsByStagiaireId(this.idStagiaire);
+    this.listeDuels =  this._duelService.getDuelsByStagiaireId(this.idStagiaire);
   }
 
 }

@@ -9,6 +9,9 @@ const URL_BACKEND = environment.backendUrl + environment.duelsApi;
 
 @Injectable()
 export class DuelService {
+  
+  //Valorisé dans ""
+  currentDuelId:number;
 
   constructor(private _http: HttpClient) { }
 
@@ -28,6 +31,12 @@ export class DuelService {
       });
     });
     return listeDuels;
+  }
+
+  getDuelById(idDuel:number):Promise<Duel> {
+    return this._http.get(URL_BACKEND+idDuel)
+      .toPromise()
+      .then((duelsServeur: any) => duelsServeur.map( el => new Duel(el.id, el.stagiaireA, el.stagiaireB, el.quizz)));
   }
 
 }
