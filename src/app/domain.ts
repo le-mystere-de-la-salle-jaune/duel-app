@@ -42,9 +42,9 @@ export class Duel {
     toString(stagiaireChoisi:number) {
         switch (stagiaireChoisi) {
             case 1:
-                return this.quizz.titre + ' / ' + this.stagiaireA.nom + ' ' + this.stagiaireA.prenom;
+                return this.quizz.titre + ' /ddd ' + this.stagiaireA.toString();
             case 2:
-                return this.quizz.titre + ' / ' + this.stagiaireB.nom + ' ' + this.stagiaireB.prenom;
+                return this.quizz.titre + ' /ddd ' + this.stagiaireB.toString();
             default:
                 console.log('Le numéro du stagiaire doit être 1 ou 2');
         }

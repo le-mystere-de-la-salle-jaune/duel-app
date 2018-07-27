@@ -18,7 +18,7 @@ export class DuelService {
   listerDuels(): Promise<Duel[]> {
     return this._http.get(URL_BACKEND)
       .toPromise()
-      .then((duelsServeur: any[]) => duelsServeur.map( el => new Duel(el.id, el.stagiaireA, el.stagiaireB, el.quizz)));
+      .then((duelsServeur: any[]) => duelsServeur.map( el => new Duel(el.id, /*new Stagiaire*/el.stagiaireA, el.stagiaireB, el.quizz)));
   }
 
   getDuelsByStagiaireId(idStagiaire:number):Duel[] {
