@@ -21,6 +21,7 @@ import { DetailsResultatsComponent } from './details-resultats/details-resultats
 import { FormsModule } from '@angular/forms';
 import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.component'
 import { NavigationComponent } from './navigation/navigation.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 const appRoutes: Routes = [
@@ -60,9 +61,8 @@ const appRoutes: Routes = [
     DetailsResultatsComponent,
     PageNotFoundComponent,
     FormStagiaireComponent,
-    NavigationComponent 
-
-
+    NavigationComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
