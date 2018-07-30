@@ -23,6 +23,7 @@ import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.componen
 import { NavigationComponent } from './navigation/navigation.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ParticiperDuelComponent } from './participer-duel/participer-duel.component';
+import { ResultatsService } from './services/resultats.service';
 
 
 const appRoutes: Routes = [
@@ -37,8 +38,8 @@ const appRoutes: Routes = [
 
       { path: 'duels/:id_duel', component: ParticiperDuelComponent },
 
-      { path: 'resultats', component: ResultatsComponent },
-      
+      { path: 'resultats-duels', component: ResultatsComponent },
+
       { path: 'resultats/:id_duel', component: DetailsResultatsComponent },
 
       { path: 'profil', component: FormStagiaireComponent }
@@ -75,7 +76,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [StagiaireService, DuelService],
+  providers: [StagiaireService, DuelService, ResultatsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
