@@ -15,7 +15,7 @@
           <td>{{duel.toString(1)}}</td>
         </ng-template>
         <td>
-          <button class="btn btn-primary btn-sm" (click)="participer()" disabled>Participer</button>
+          <button class="btn btn-primary btn-sm" (click)="participer(duel.id)">Participer</button>
         </td>
       </tr>
     </tbody>

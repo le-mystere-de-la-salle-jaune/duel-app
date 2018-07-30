@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { FormStagiaireComponent } from './form-stagiaire/form-stagiaire.component'
 import { NavigationComponent } from './navigation/navigation.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ParticiperDuelComponent } from './participer-duel/participer-duel.component';
 import { ResultatsService } from './services/resultats.service';
 
 
@@ -35,9 +36,11 @@ const appRoutes: Routes = [
     children: [
       { path: 'duels', component: DuelsComponent }, // /page2 affiche le composant B
 
+      { path: 'duels/:id_duel', component: ParticiperDuelComponent },
+
       { path: 'resultats-duels', component: ResultatsComponent },
-      
-      { path: 'resultats/:id', component: DetailsResultatsComponent },
+
+      { path: 'resultats/:id_duel', component: DetailsResultatsComponent },
 
       { path: 'profil', component: FormStagiaireComponent }
 
@@ -63,7 +66,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     FormStagiaireComponent,
     NavigationComponent,
-    FilterPipe
+    FilterPipe,
+    ParticiperDuelComponent
   ],
   imports: [
     BrowserModule,

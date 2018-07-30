@@ -1,3 +1,4 @@
+
 export class Stagiaire {
     id: number;
     nom: string;
@@ -18,8 +19,6 @@ export class Stagiaire {
         delete stagiaireServeur.photoUrl
         return stagiaireServeur
     }
-
-
 
     toString() {
         return this.prenom + ' ' + this.nom;
@@ -42,9 +41,9 @@ export class Duel {
     toString(stagiaireChoisi: number) {
         switch (stagiaireChoisi) {
             case 1:
-                return this.quizz.titre + ' / ' + this.stagiaireA.nom + ' ' + this.stagiaireA.prenom;
+                return this.quizz.titre + ' / ' + this.stagiaireA.prenom + ' ' + this.stagiaireA.nom;
             case 2:
-                return this.quizz.titre + ' / ' + this.stagiaireB.nom + ' ' + this.stagiaireB.prenom;
+                return this.quizz.titre + ' / ' + this.stagiaireB.prenom + ' ' + this.stagiaireB.nom;
             default:
                 console.log('Le numéro du stagiaire doit être 1 ou 2');
         }

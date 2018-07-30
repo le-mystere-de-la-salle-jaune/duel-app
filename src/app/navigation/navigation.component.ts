@@ -21,7 +21,9 @@ export class NavigationComponent implements OnInit {
     this._stagiaireService.currentStagiaireId = idStagiaire;
     this.currentStagiaireId = idStagiaire;
     console.log(idStagiaire);
-    this._stagiaireService.findStagiaireById(idStagiaire).then((stagiaireFound:Stagiaire) => this.currentStagiaire = new Stagiaire(idStagiaire, stagiaireFound.nom, stagiaireFound.prenom, stagiaireFound.email, stagiaireFound.photoUrl));
+    this._stagiaireService.findStagiaireFromServeur(idStagiaire).subscribe();
+    this._stagiaireService.modifStagiaire$
+      .subscribe((stagiaireFound:Stagiaire) => this.currentStagiaire = new Stagiaire(idStagiaire, stagiaireFound.nom, stagiaireFound.prenom, stagiaireFound.email, stagiaireFound.photoUrl));
   }
 
 }
