@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Duel } from '../domain';
 import { DuelService } from '../services/duel.service';
 import { StagiaireService } from '../services/stagiaire.service';
-import { FilterPipe } from '../pipes/filter.pipe';
 
 
 @Component({

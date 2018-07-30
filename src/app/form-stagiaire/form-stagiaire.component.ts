@@ -16,13 +16,21 @@ export class FormStagiaireComponent implements OnInit {
   }
   
   ngOnInit() {
-    this._stagiaireService.findStagiaireById(this._stagiaireService.currentStagiaireId).then((stagiaireFound:Stagiaire) => this.stagiaire = stagiaireFound);
+    this._stagiaireService.modifStagiaire$
+      .subscribe((stagiaireFound:Stagiaire) => this.stagiaire = stagiaireFound);
   }
 
   submit() {
-    this._stagiaireService.modifierStagiaire(this.stagiaire);
-    console.log(this.stagiaire);
-    this._router.navigate([this._stagiaireService.currentStagiaireId+'/duels'])
-  }
+    this._stagiaireService.modifierStagiaire(this.stagiaire)
+      .subscribe(
+        (stagiaire) => {
+          console.log(this.stagiaire);
+          this._router.navigate([this._stagiaireService.currentStagiaireId+'/duels'])      
+        },
+        error => {
+          console.log('error', error);
+        }
+      );
+     }
 
 }
