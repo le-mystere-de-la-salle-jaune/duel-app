@@ -36,7 +36,7 @@ export class DuelService {
   getDuelById(idDuel:number):Promise<Duel> {
     return this._http.get(URL_BACKEND+idDuel)
       .toPromise()
-      .then((duelsServeur: any) => duelsServeur.map( el => new Duel(el.id, el.stagiaireA, el.stagiaireB, el.quizz)));
+      .then((duelsServeur: any) =>  new Duel(duelsServeur.id, duelsServeur.stagiaireA, duelsServeur.stagiaireB, duelsServeur.quizz));
   }
 
 }
