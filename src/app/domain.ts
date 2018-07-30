@@ -19,8 +19,6 @@ export class Stagiaire {
         return stagiaireServeur
     }
 
-
-
     toString() {
         return this.prenom + ' ' + this.nom;
     }
@@ -42,9 +40,9 @@ export class Duel {
     toString(stagiaireChoisi:number) {
         switch (stagiaireChoisi) {
             case 1:
-                return this.quizz.titre + ' /ddd ' + this.stagiaireA.toString();
+                return this.quizz.titre + ' / ' + this.stagiaireA.prenom + ' ' + this.stagiaireA.nom;
             case 2:
-                return this.quizz.titre + ' /ddd ' + this.stagiaireB.toString();
+                return this.quizz.titre + ' / ' + this.stagiaireB.prenom + ' ' + this.stagiaireB.nom;
             default:
                 console.log('Le numéro du stagiaire doit être 1 ou 2');
         }

@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let duel of listeDuels | filterPipe:saisi">
-        <td *ngIf='idStagiaire == duel.stagiaireA.id else stagiaireB'>{{duel |json}}{{duel.toString(2)}}</td>
+        <td *ngIf='idStagiaire == duel.stagiaireA.id else stagiaireB'>{{duel.toString(2)}}</td>
         <ng-template #stagiaireB>
           <td>{{duel.toString(1)}}</td>
         </ng-template>

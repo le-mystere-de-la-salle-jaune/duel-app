@@ -24,8 +24,8 @@ export class DuelsComponent implements OnInit {
   }
 
   participer(idDuel:number) {
-    this._router.navigate([location.pathname+'/'+idDuel])
     this._duelService.currentDuelId = idDuel;
+    this._router.navigate([location.pathname+'/'+idDuel])
   }
 
   ngOnInit() {
