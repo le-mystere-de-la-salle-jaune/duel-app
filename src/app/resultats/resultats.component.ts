@@ -22,7 +22,7 @@ export class ResultatsComponent implements OnInit {
 
   // Injection du service ActivatedRoute
   constructor(private router:Router, private route: ActivatedRoute, private _resultatsService:ResultatsService, private _stagiaireService:StagiaireService) {
-    this._resultatsService.listerResultats().then((resultats: Resultat[]) => {
+    this._resultatsService.listerResultats().subscribe((resultats: Resultat[]) => {
       resultats.forEach(resultat => {
         this.listeResultats.push(resultat);
       });
