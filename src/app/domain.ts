@@ -15,7 +15,7 @@ export class Stagiaire {
     }
 
     toStagiaireServeur(): any {
-        const stagiaireServeur = Object.assign(this, { "photo_url": this.photoUrl });
+        const stagiaireServeur = Object.assign( { "photo_url": this.photoUrl }, this);
         delete stagiaireServeur.photoUrl
         return stagiaireServeur
     }
